@@ -37,9 +37,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +51,7 @@
             this.clearFormToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(575, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -61,6 +60,7 @@
             this.accountInfoToolStripMenuItem.Name = "accountInfoToolStripMenuItem";
             this.accountInfoToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
             this.accountInfoToolStripMenuItem.Text = "Account info";
+            this.accountInfoToolStripMenuItem.Click += new System.EventHandler(this.AccountInfoToolStripMenuItem_Click);
             // 
             // microsoftToolsToolStripMenuItem
             // 
@@ -76,22 +76,25 @@
             this.clearWindowsCredentialsToolStripMenuItem.Name = "clearWindowsCredentialsToolStripMenuItem";
             this.clearWindowsCredentialsToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.clearWindowsCredentialsToolStripMenuItem.Text = "Clear Windows Credentials";
+            this.clearWindowsCredentialsToolStripMenuItem.Click += new System.EventHandler(this.ClearWindowsCredentialsToolStripMenuItem_Click);
             // 
             // closeMicrosoftProductsToolStripMenuItem
             // 
             this.closeMicrosoftProductsToolStripMenuItem.Name = "closeMicrosoftProductsToolStripMenuItem";
             this.closeMicrosoftProductsToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.closeMicrosoftProductsToolStripMenuItem.Text = "Close microsoft products";
+            this.closeMicrosoftProductsToolStripMenuItem.Click += new System.EventHandler(this.CloseMicrosoftProductsToolStripMenuItem_Click);
             // 
             // clearFormToolStripMenuItem
             // 
             this.clearFormToolStripMenuItem.Name = "clearFormToolStripMenuItem";
             this.clearFormToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.clearFormToolStripMenuItem.Text = "Clear Form";
+            this.clearFormToolStripMenuItem.Click += new System.EventHandler(this.ClearFormToolStripMenuItem_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 59);
+            this.textBox1.Location = new System.Drawing.Point(79, 25);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 1;
@@ -99,13 +102,10 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2,
-            this.toolStripStatusLabel3,
-            this.toolStripStatusLabel4});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 259);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(575, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -115,29 +115,32 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
-            // toolStripStatusLabel2
+            // label1
             // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "User Name";
             // 
-            // toolStripStatusLabel3
+            // button1
             // 
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel3.Text = "toolStripStatusLabel3";
-            // 
-            // toolStripStatusLabel4
-            // 
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel4.Text = "toolStripStatusLabel4";
+            this.button1.Location = new System.Drawing.Point(185, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Submit";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // Log
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(575, 281);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.menuStrip1);
@@ -165,9 +168,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
